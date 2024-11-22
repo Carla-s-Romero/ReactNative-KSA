@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
-import {styles} from './Formstyles';
+import { styles } from './Formstyles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Form = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -21,6 +22,7 @@ const Form = ({ navigation }) => {
       const data = await response.json();
 
       if (response.ok) {
+        await AsyncStorage.setItem('token', data.token); // Armazena o token
         navigation.navigate('TelaTurmas');
       } else {
         setErro(data.message || 'Erro no login. Tente novamente.');

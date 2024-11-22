@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, TouchableOpacity, ImageBackground, RefreshControl} from 'react-native';
 import { styles } from './TelaTurmasstyles';
 import { Header, Footer } from '../../imports/import';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TelaTurmas = () => {
   const [turmas, setTurmas] = useState([]);
@@ -16,17 +17,25 @@ const TelaTurmas = () => {
   }, []);
 
   useEffect(() => {
-    fetch('https://back-end-mediotec.onrender.com/api/turmas')
-      .then(response => response.json())
-      .then(data => {
+    const fetchTurmas = async () => {
+      const token = await AsyncStorage.getItem('token');
+      try {
+        const response = await fetch('https://back-end-mediotec.onrender.com/api/turmas', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
         const sortedData = data.sort((a, b) => a.nome.localeCompare(b.nome));
         setTurmas(sortedData);
         setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error fetching turmas:', error);
         setLoading(false);
-      });
+      }
+    };
+
+    fetchTurmas();
   }, []);
 
   const renderTurma = ({ item }) => {
