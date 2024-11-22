@@ -55,7 +55,11 @@ const Form = ({ navigation }) => {
           />
         </View>
 
-        {erro ? <Text style={styles.errorText}>{erro}</Text> : null}
+        {erro ? (
+        <View style={styles.errorBox}>
+          <Text style={styles.errorText}>{erro}</Text>
+          </View>
+        ) : null}
 
         <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
           <Text style={styles.forgotPasswordText}>Esqueceu a senha?</Text>

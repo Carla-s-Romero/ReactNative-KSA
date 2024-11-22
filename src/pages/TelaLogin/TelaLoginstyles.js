@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#fff',
     position: 'relative',
   },
   content: {
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     width: width * 0.5, 
     height: height * 0.25, 
     position: 'absolute',
-    top: height * -0.09, 
+    top: height * -0.13, 
     left: width * -0.11, 
   },
   textContainer: {
@@ -102,7 +102,7 @@ export const styles = StyleSheet.create({
     color: '#28a745',
   },
   imageContainer: {
-    marginTop: '10%',
+    marginTop: '-10%',
     height: height * 0.25, 
     marginLeft: width * -0.4, 
   },

@@ -11,7 +11,7 @@ const TelaLogin = ({ navigation }) => {
   };
 
   const handleLogin = () => {
-    navigation.navigate('Telaturmas');
+    navigation.navigate('TelaTurmas');
   };
 
   return (
