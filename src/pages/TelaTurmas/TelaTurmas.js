@@ -42,7 +42,7 @@ const TelaTurmas = () => {
     const totalPessoas = item.professores.length + item.alunos.length;
 
     return (
-      <TouchableOpacity style={styles.turmaCard}>
+      <TouchableOpacity onPress={() => navigation.navigate('TelaComunicado', { turmaid: item.id })} style={styles.turmaCard}>
         <ImageBackground source={require('../../assets/Banner.jpg')} blurRadius={5} style={styles.turmaCardHeader}>
           <View style={styles.overlay} />
           <Image source={require('../../assets/heimer.jpg')} style={styles.turmaFotoProf} />
