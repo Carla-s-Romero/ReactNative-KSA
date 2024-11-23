@@ -4,7 +4,7 @@ import { styles } from './TelaTurmasstyles';
 import { Header, Footer } from '../../imports/import';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const TelaTurmas = () => {
+const TelaTurmas = ({ navigation }) => {
   const [turmas, setTurmas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -42,7 +42,7 @@ const TelaTurmas = () => {
     const totalPessoas = item.professores.length + item.alunos.length;
 
     return (
-      <TouchableOpacity style={styles.turmaCard}>
+      <TouchableOpacity onPress={() => navigation.navigate('TelaComunicado', { turmaid: item._id })} style={styles.turmaCard}>
         <ImageBackground source={require('../../assets/Banner.jpg')} blurRadius={5} style={styles.turmaCardHeader}>
           <View style={styles.overlay} />
           <Image source={require('../../assets/heimer.jpg')} style={styles.turmaFotoProf} />
