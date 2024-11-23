@@ -9,7 +9,8 @@ import { Header, Footer, MessageCard } from '../../imports/import';
  * @param {string} [turmaid] the id of the turma to display messages from
  * @returns {React.ReactElement} a React component displaying a list of messages
  */
-const TelaComunicado = ({turmaid = '67365397f7dd299b547cdb9d'}) => {
+const TelaComunicado = ({ route }) => {
+    const { turmaid } = route.params; // Obtém o id da turma a partir dos parâmetros da rota
     const [activeTab, setActiveTab] = useState('Mural');
     const [turma, setTurma] = useState([]);
 
