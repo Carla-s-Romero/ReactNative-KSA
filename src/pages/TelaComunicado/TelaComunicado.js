@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from './TelaComunicadoStyles';
 import { Header, Footer, MessageCard } from '../../imports/import';
 
@@ -50,10 +51,13 @@ const TelaComunicado = ({ route }) => {
                 <Text style={styles.comunicadoTitulo}>Comunicados</Text>
             </View>
             <MessageCard turmaid={turmaid} />
+            <View style={styles.AvisoContainer}>
+                
+                <Text style={styles.AvisoText}><Ionicons name="lock-closed" size={12} color="#939393" />Apenas o professor pode enviar mensagens neste canal. Fique atento às notificações para não perder nenhuma informação importante.</Text>
+            </View>
             <Footer />
         </View>
     );
-
 };
 
 export default TelaComunicado;

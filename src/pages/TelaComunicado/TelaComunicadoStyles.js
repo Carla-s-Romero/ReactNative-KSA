@@ -65,6 +65,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#ddd',
     marginRight: 8,
   },
+  AvisoContainer: {
+    backgroundColor:'#ECECEC',
+    padding: 20,
+    height: '20%',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1,
+  },
+  AvisoText: {
+    color: '#939393',
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
 export default styles;
