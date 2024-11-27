@@ -9,6 +9,8 @@ const Header = ({ title }) => {
     <View style={styles.container}>
       <LinearGradient
         colors={['#021320', '#023A60', '#022036']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
         style={styles.header}
       >
         <Text style={styles.title}>{title}</Text>
