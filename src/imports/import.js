@@ -1,6 +1,7 @@
 import TelaLogin from '../pages/TelaLogin/TelaLogin'; 
 import TelaTurmas from '../pages/TelaTurmas/TelaTurmas';
 import TelaComunicado from '../pages/TelaComunicado/TelaComunicado';
+import TelaContato from '../pages/TelaContato/TelaContato';
 
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
@@ -12,7 +13,7 @@ export {
   Footer,
   Header,
   MessageCard,
-
+  TelaContato,
   TelaLogin,
   TelaTurmas,
   TelaComunicado
