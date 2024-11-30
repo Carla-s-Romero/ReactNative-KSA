@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     color: '#333',
     fontFamily: 'Open Sans Semi Bold',
+    fontWeight: 'bold',
   },
 
   setaInline: {
