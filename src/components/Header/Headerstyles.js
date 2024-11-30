@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
   },
   title: {
-    color: 'white',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
     fontFamily: 'Open Sans Semi Bold',

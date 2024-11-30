@@ -16,7 +16,7 @@ const TelaHorarios = () => {
         <Image 
           source={require('../../assets/Gradehorario.png')} 
           style={styles.gradeHorarioImage} />
-        <Image source={require('../../assets/decorTelaComunicados.png')} style={styles.decorTela} />
+        <Image source={require('../../assets/circulo_laranja.png')} style={styles.decorTela} />
       </View>
     </View>
   );

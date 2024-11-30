@@ -1,17 +1,17 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    paddingTop: 10,
+    backgroundColor: '#FFFFFF',
+    paddingTop: height * 0.00, 
   },
 
   content: {
     flex: 1,
-    padding: 10,
+    padding: width * 0.03, 
     justifyContent: 'flex-start', 
     alignItems: 'flex-start', 
   },
@@ -19,35 +19,37 @@ export const styles = StyleSheet.create({
   textComSetaContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 40, 
-    paddingLeft: 6, 
+    marginTop: height * 0.05, 
+    paddingLeft: width * 0.02, 
   },
 
   textComSeta: {
-    fontSize: 20,
-    color: '#333',
+    fontSize: width * 0.05, 
+    color: '#000000',
     fontFamily: 'Open Sans Semi Bold',
     fontWeight: 'bold',
   },
 
   setaInline: {
-    width: 10, 
-    height: 16, 
-    marginRight: 8, 
+    width: width * 0.034,  
+    height: height * 0.03, 
+    marginRight: width * 0.03, 
   },
   
   gradeHorarioImage: {
-    width: width * 0.95,  
+    width: width * 0.9,  
     height: height * 0.3,  
     resizeMode: 'contain',  
-    marginTop: 20, 
+    marginTop: height * 0.03, 
     alignSelf: 'center', 
   },
   
   decorTela: {
     position: 'absolute',
-    top: '-7%', 
-    right: '-5%',
+    top: '-10%',  
+    right: '-30%', 
+    width: width * 0.9,  
+    height: width * 0.34,
+    resizeMode: 'contain', 
   },
-  
 });
