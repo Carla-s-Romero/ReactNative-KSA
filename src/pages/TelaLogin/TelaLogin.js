@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 import {Form } from '../../imports/import'; 
-import { styles } from './TelaLoginstyles';
+import { styles } from './TelaLoginStyles';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TelaLogin = ({ navigation }) => {
