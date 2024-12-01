@@ -68,4 +68,37 @@ export const styles = StyleSheet.create({
   modalContent: {
     alignItems: 'center',
   },
+  zoomControls: {
+    position: 'absolute',
+    bottom: 90,
+    left: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: 120,
+    padding: 10,
+    borderRadius: 10,
+  },
+  
+  zoomButton: {
+    width: 40,
+    height: 40,
+    backgroundColor: '#FFF', 
+    borderRadius: 20, 
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5, 
+  },
+  
+  zoomButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  
+  
 });
