@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, TouchableOpacity, ImageBackground, RefreshControl} from 'react-native';
-import { styles } from './TelaTurmasStyles';
+import { styles } from './TelaTurmasstyles';
 import { Header, Footer } from '../../imports/import';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

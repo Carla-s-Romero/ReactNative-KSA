@@ -7,13 +7,16 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 40,
   },
+
   content: {
     paddingBottom: 50,
   },
+
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
     width: '100%',
   },
+
   label: {
     fontSize: 14,
     fontFamily: 'Open Sans Semi Bold',
@@ -21,6 +24,7 @@ export const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 7,
   },
+
   input: {
     height: 50,
     borderColor: '#000',
@@ -30,51 +34,74 @@ export const styles = StyleSheet.create({
     fontFamily: 'Open Sans',
     backgroundColor: '#FFF',
   },
+
   errorBox: {
-    backgroundColor: '#FFCDD2', // Fundo vermelho claro
+    backgroundColor: '#FFCDD2', 
     padding: 15,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#F44336', // Borda vermelha
+    borderColor: '#F44336',
     marginVertical: 10,
-    alignSelf: 'stretch', // Para preencher horizontalmente
-    alignItems: 'center', // Centraliza o texto horizontalmente
+    alignSelf: 'stretch', 
+    alignItems: 'center', 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 3,
-    elevation: 5, // Sombra para Android
+    elevation: 5, 
   },
+
   errorText: {
-    color: '#B71C1C', // Texto vermelho escuro
+    color: '#B71C1C', 
     fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
   },
+
   buttonText: {
     color: '#FFF',
     fontSize: 20,
     fontWeight: '600',
   },
+
   enterButton: {
-    width: 160,
+    width: 190,
     height: 50,
     backgroundColor: '#F90',
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 10, 
-    shadowColor: '#000', 
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
+    elevation: 7, 
     marginTop: 40,
     alignSelf: 'center',
+    fontWeight: 'bold'
   },
-  forgotPasswordText: {
-    color: '#007BFF',
-    fontSize: 14,
-    textAlign: 'left',
+
+  dropdownStyle:  {
+    borderRadius: 0,
+    border: 'o,5 solid #000',
+    marginBottom: 10,
+  },
+  passwordInput: {
+    flex: 1,
+    height: 50,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    paddingLeft: 10,
+    paddingRight: 40, 
+  },
+  
+  iconContainer: {
+    position: 'absolute',
+    right: 10,
+    top: 12, 
+    height: 26,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  forgotPasswordText:  {
+    color: '#1861F0',
     textDecorationLine: 'underline',
-    marginTop: -10,
-  },
+  }
 });
