@@ -3,6 +3,8 @@ import TelaTurmas from '../pages/TelaTurmas/TelaTurmas';
 import TelaComunicado from '../pages/TelaComunicado/TelaComunicado';
 import TelaContato from '../pages/TelaContato/TelaContato';
 import TelaHorarios from '../pages/TelaHorarios/TelaHorarios';
+import TelaBoletim from '../pages/TelaBoletim/TelaBoletim';
+
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Form from '../components/Form/Form';
@@ -13,6 +15,7 @@ export {
   Footer,
   Header,
   MessageCard,
+  TelaBoletim,
   TelaContato,
   TelaLogin,
   TelaTurmas,
