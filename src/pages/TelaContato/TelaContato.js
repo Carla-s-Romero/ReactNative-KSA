@@ -29,7 +29,6 @@ const TelaContato = ({ navigation }) => {
       <Header title="Contato" />
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.contactContainer}>
-          <Image source={require('../../assets/logoSenac.png')} style={styles.image} resizeMode='contain' />
           <Text style={styles.title}>Entre em Contato</Text>
           <Text style={styles.description}>
             Se você quiser registrar sua opinião, esclarecer dúvidas, enviar sugestões ou pedir informações, entre em contato conosco através dos meios abaixo:
