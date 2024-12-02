@@ -37,7 +37,9 @@ const TelaComunicado = ({ route }) => {
     return (
         <View style={styles.container}>
             <Header title="KSA" />
-            <Text style={styles.title}><Image source={require('../../assets/Seta.png')} /> {turma.nome}</Text>
+            <View style={styles.line}>
+            <View style={styles.triangle} /> <Text style={styles.title}>{turma.nome}</Text>
+            </View>
             <Image source={require('../../assets/decorTelaComunicados.png')} style={ styles.decorTela } />
             <View style={styles.tabsContainer}>
                 <TouchableOpacity onPress={() => setActiveTab('Mural')}>
