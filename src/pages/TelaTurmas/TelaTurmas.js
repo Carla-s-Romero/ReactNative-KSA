@@ -47,20 +47,15 @@ const TelaTurmas = ({ navigation }) => {
           <View style={styles.overlay} />
           <Image source={require('../../assets/heimer.jpg')} style={styles.turmaFotoProf} />
           <View style={styles.turmaCardHeaderDesc}>
-            <Text style={styles.turmaCardHeaderText}>Turno: {item.turno}</Text>
-            <Text style={styles.turmaCardHeaderText}>Série: {item.serie}</Text>
           </View>
         </ImageBackground>
         <View style={styles.turmaLine}>
           <Text style={styles.turmaName}>{item.nome}</Text>
+          <Text style={styles.turmaCardHeaderText}>Turno: {item.turno}</Text>
         </View>
         <View style={styles.turmaDetail}>
           <Image source={require('../../assets/professor.png')} style={styles.detailIcon} />
           <Text style={styles.turmaDetailText} numberOfLines={1} ellipsizeMode="tail">{item.professores.join(', ')}</Text>
-        </View>
-        <View style={styles.turmaDetail}>
-          <Image source={require('../../assets/people.png')} style={styles.detailIcon} />
-          <Text style={styles.turmaDetailText} numberOfLines={1} ellipsizeMode="tail">{totalPessoas} Pessoas</Text>
         </View>
       </TouchableOpacity>
     );
@@ -88,7 +83,8 @@ const TelaTurmas = ({ navigation }) => {
           }
         />
       )}
-      <Footer />
+
+
     </View>
   );
 };

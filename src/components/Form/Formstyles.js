@@ -4,12 +4,13 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
-    marginTop: 40,
+    
   },
 
-  content: {
-    paddingBottom: 50,
+  content:{
+    paddingHorizontal: 23,
+    paddingBottom: 40,
+    height: '100%'
   },
 
   inputContainer: {
@@ -103,5 +104,28 @@ export const styles = StyleSheet.create({
   forgotPasswordText:  {
     color: '#1861F0',
     textDecorationLine: 'underline',
-  }
+  },
+
+  helloText:{
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+
+  subText: {
+    textAlign: 'center',
+    color: '#A8A8A8',
+    marginBottom: 40,
+  },
+
+  imageLogin: {
+    display: 'flex',
+    position: 'relative',
+    width: '100%',  
+    height: '30%',
+    objectFit: 'cover', 
+    zIndex: 1,
+    marginTop: '-5%'
+  },
 });

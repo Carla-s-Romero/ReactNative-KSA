@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView,Image } from 'react-native';
 import { styles } from './Formstyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -44,7 +44,14 @@ const Form = ({ navigation }) => {
   };
 
   return (
+    
+  
     <View style={styles.container}>
+      <Image style={styles.imageLogin} source={require('../../assets/LoginDeccoracao.png')} />
+      <View style={styles.textContainer}>
+      <Text style={styles.helloText}> Seja Bem-Vindo!</Text>
+      <Text style={styles.subText}>Preencha os dados abaixo para realizar seu login</Text>
+      </View>
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.inputContainer}>
           <View>

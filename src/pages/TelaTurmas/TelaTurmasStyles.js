@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   line: {
     borderBottomWidth: 1,
     borderBottomColor: 'black',
-    paddingTop: 20, 
+    paddingTop: 40, 
     paddingBottom: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -115,11 +115,15 @@ export const styles = StyleSheet.create({
   },
   turmaCardHeaderDesc:{
     paddingLeft: 80,
+    height: 25,
   },
   turmaCardHeaderText: {
-    fontWeight: 'bold',
-    color: '#FFF',
+    fontWeight: '400',
+    color: '#000',
     width: '100%',
+    marginTop: 4,
+    marginBottom: 10,
+    fontSize: 12,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,

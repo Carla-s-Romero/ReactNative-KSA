@@ -1,37 +1,40 @@
 import React, { useState } from 'react';
-import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
-import {Form } from '../../imports/import'; 
+import { View, Text, Image, FlatList } from 'react-native';
+import { Form } from '../../imports/import';
 import { styles } from './TelaLoginStyles';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TelaLogin = ({ navigation }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const staticContent = [
+    { id: 'header', type: 'header' },
+    { id: 'form', type: 'form' },
+  ];
 
-  const handleSelect = (option) => {
-    setSelectedOption(option);
-  };
+  const renderItem = ({ item }) => {
+    // if (item.type === 'header') {
+    //   return (
+    //     <>
+    //       <Image style={styles.imageLogin} source={require('../../assets/LoginDeccoracao.png')} />
+         
+    //     </>
+    //   );
+    // }
 
-  const handleLogin = () => {
-    navigation.navigate('TelaTurmas');
+    if (item.type === 'form') {
+      return <Form navigation={navigation} />;
+    }
+
+    return null;
   };
 
   return (
-    <>
-      <View style={styles.container}>
-        <Image style={styles.imageLogin} source={require('../../assets/LoginDeccoracao.png')} />
-        
-        <ScrollView contentContainerStyle={styles.content}>
-          <View style={styles.textContainer}>
-              <Text style={styles.helloText}> Seja Bem-Vindo!</Text>
-            
-            <Text style={styles.subText}>Preencha os dados abaixo para realizar seu login</Text>
-          </View>
-
-          {/* Formulário */}
-          <Form navigation={navigation} /> 
-        </ScrollView>
-      </View>
-    </>
+    <View style={styles.container}>
+      <FlatList
+        data={staticContent}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        contentContainerStyle={styles.content}
+      />
+    </View>
   );
 };
 

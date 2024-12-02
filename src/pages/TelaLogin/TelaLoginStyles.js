@@ -16,20 +16,12 @@ export const styles = StyleSheet.create({
     display: 'flex',
     position: 'relative',
     width: '100%',  
-    height: '27%', 
+    height: '70%', 
     zIndex: 1,
+    marginTop: '-5%',
+    marginBottom: -20,
   },
-  helloText:{
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    textAlign: 'center',
-    marginTop: -17,
-  },
-  subText: {
-    textAlign: 'center',
-    color: '#A8A8A8',
-  },
+
 
   
 });
