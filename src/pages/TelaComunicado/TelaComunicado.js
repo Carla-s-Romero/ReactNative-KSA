@@ -38,7 +38,8 @@ const TelaComunicado = ({ route }) => {
         <View style={styles.container}>
             <Header title="KSA" />
             <View style={styles.line}>
-            <View style={styles.triangle} /> <Text style={styles.title}>{turma.nome}</Text>
+                <View style={styles.triangle} /> 
+                <Text style={styles.title}>{turma.nome}</Text>
             </View>
             <Image source={require('../../assets/decorTelaComunicados.png')} style={ styles.decorTela } />
             <View style={styles.tabsContainer}>
