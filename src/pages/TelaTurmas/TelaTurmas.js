@@ -13,7 +13,7 @@ const TelaTurmas = ({ navigation }) => {
     const token = await AsyncStorage.getItem('token');
     const userId = await AsyncStorage.getItem('userId');
     try {
-      const response = await fetch(`http://192.168.1.68:3000/api/turmas/user/${userId}`, {
+      const response = await fetch(`https://back-end-mediotec.onrender.com/api/turmas/user/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

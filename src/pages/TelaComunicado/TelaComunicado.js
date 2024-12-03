@@ -18,7 +18,7 @@ const TelaComunicado = ({ route }) => {
     const fetchData = async () => {
         try {
             const storedToken = await AsyncStorage.getItem('token');
-            const response = await fetch(`http://192.168.1.68:3000/api/turmas/${turmaid}`, {
+            const response = await fetch(`https://back-end-mediotec.onrender.com/api/turmas/${turmaid}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${storedToken}`,

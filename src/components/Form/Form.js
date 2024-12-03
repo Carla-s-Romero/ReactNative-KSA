@@ -20,7 +20,7 @@ const Form = ({ navigation }) => {
   };
 
   const handleLogin = async () => {
-    const backendUrl = 'http://192.168.1.68:3000/api';
+    const backendUrl = 'https://back-end-mediotec.onrender.com/api';
     try {
       const response = await fetch(`${backendUrl}/auth/login/`, {
         method: 'POST',
