@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, TouchableOpacity, ImageBackground, RefreshControl} from 'react-native';
 import { styles } from './TelaTurmasStyles';
 import { Header, Footer } from '../../imports/import';
@@ -7,39 +7,39 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const TelaTurmas = ({ navigation }) => {
   const [turmas, setTurmas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [refreshing, setRefreshing] = React.useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 2000);
-  }, []);
+  const fetchTurmas = async () => {
+    const token = await AsyncStorage.getItem('token');
+    const userId = await AsyncStorage.getItem('userId');
+    try {
+      const response = await fetch(`http://192.168.1.68:3000/api/turmas/user/${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      const sortedData = data.sort((a, b) => a.nome.localeCompare(b.nome));
+      setTurmas(sortedData);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching turmas:', error);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchTurmas = async () => {
-      const token = await AsyncStorage.getItem('token');
-      try {
-        const response = await fetch('https://back-end-mediotec.onrender.com/api/turmas', {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-        const data = await response.json();
-        const sortedData = data.sort((a, b) => a.nome.localeCompare(b.nome));
-        setTurmas(sortedData);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching turmas:', error);
-        setLoading(false);
-      }
-    };
-
     fetchTurmas();
+  }, []);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    fetchTurmas().then(() => setRefreshing(false));
   }, []);
 
   const renderTurma = ({ item }) => {
     const totalPessoas = item.professores.length + item.alunos.length;
+    const nomeProf = item.primeiroProfessor
 
     return (
       <TouchableOpacity onPress={() => navigation.navigate('TelaComunicado', { turmaid: item._id })} style={styles.turmaCard}>
@@ -55,7 +55,7 @@ const TelaTurmas = ({ navigation }) => {
         </View>
         <View style={styles.turmaDetail}>
           <Image source={require('../../assets/professor.png')} style={styles.detailIcon} />
-          <Text style={styles.turmaDetailText} numberOfLines={1} ellipsizeMode="tail">{item.professores.join(', ')}</Text>
+          <Text style={styles.turmaDetailText} numberOfLines={1} ellipsizeMode="tail">{nomeProf}</Text>
         </View>
       </TouchableOpacity>
     );
