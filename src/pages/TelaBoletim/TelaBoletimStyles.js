@@ -73,6 +73,11 @@ export const styles = StyleSheet.create({
 
   },
 
+  activeTabText: {
+    color: '#452E94',
+    fontWeight: 'bold',
+  },
+
   rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
