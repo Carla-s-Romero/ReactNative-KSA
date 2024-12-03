@@ -10,14 +10,6 @@ const TelaLogin = ({ navigation }) => {
   ];
 
   const renderItem = ({ item }) => {
-    // if (item.type === 'header') {
-    //   return (
-    //     <>
-    //       <Image style={styles.imageLogin} source={require('../../assets/LoginDeccoracao.png')} />
-         
-    //     </>
-    //   );
-    // }
 
     if (item.type === 'form') {
       return <Form navigation={navigation} />;
