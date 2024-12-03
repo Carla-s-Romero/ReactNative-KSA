@@ -1,30 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Header, Footer } from '../../imports/import';
 import { styles } from './TelaBoletimStyles';
-import Dec from '../../assets/dec.png'; 
+import Dec from '../../assets/dec.png';
 
-const TelaBoletim = ({ navigation }) => {
+const TelaBoletim = ({ navigation, route }) => {
+  const { idusuario = '673637a57622fcccf389f6f1' } = route.params || {};
   const { width } = Dimensions.get('window');
   const [selectedSemester, setSelectedSemester] = useState(1);
+  const [disciplinas, setDisciplinas] = useState([]);
+  const [conceitos, setConceitos] = useState([]);
 
- {} const materias = [
-    'Biologia',
-    'Educação Física',
-    'Física',
-    'Formação P.',
-    'Geografia',
-    'História',
-    'Língua Inglesa',
-    'Matemática',
-    'Química',
-    'Filosofia',
-    'Projeto de Vida',
-    'Programaê!',
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const disciplinasResponse = await fetch('https://back-end-mediotec.onrender.com/api/disciplinas');
+        const disciplinasData = await disciplinasResponse.json();
+        setDisciplinas(Array.isArray(disciplinasData) ? disciplinasData : []);
+      } catch (error) {
+        console.error('Erro ao carregar disciplinas:', error);
+      }
+
+      try {
+        const conceitosResponse = await fetch(`https://back-end-mediotec.onrender.com/api/conceitos/${idusuario}/conceitos`);
+        const conceitosData = await conceitosResponse.json();
+        setConceitos(Array.isArray(conceitosData) ? conceitosData : []);
+      } catch (error) {
+        console.error('Erro ao carregar conceitos:', error);
+      }
+    };
+
+    fetchData();
+  }, [idusuario]);
 
   const getSemesterTitle = (semester) => `${semester}° Semestre`;
+
+  const renderConceito = (disciplinaId, semestre) => {
+    const conceito = conceitos.find(
+      (c) => c.disciplinaId === disciplinaId && c.semestre === semestre
+    );
+
+    const validarConceito = (valor) => {
+      const validos = ['A', 'PA', 'NA', 'D', 'ND'];
+      return validos.includes(valor) ? valor : '-';
+    };
+
+    return conceito ? (
+      <>
+        <Text style={styles.tableCell}>{validarConceito(conceito.av1)}</Text>
+        <Text style={styles.tableCell}>{validarConceito(conceito.av2)}</Text>
+        <Text style={styles.tableCell}>{validarConceito(conceito.noa)}</Text>
+        <Text style={styles.tableCell}>{validarConceito(conceito.mencao)}</Text>
+      </>
+    ) : (
+      <>
+        <Text style={styles.tableCell}>-</Text>
+        <Text style={styles.tableCell}>-</Text>
+        <Text style={styles.tableCell}>-</Text>
+        <Text style={styles.tableCell}>-</Text>
+      </>
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -74,19 +111,16 @@ const TelaBoletim = ({ navigation }) => {
             <Text style={styles.tableHeaderText}>NOA</Text>
             <Text style={styles.tableHeaderText}>Menção Final</Text>
           </View>
-          {materias.map((disciplina, index) => (
+          {disciplinas.map((disciplina, index) => (
             <View
+              key={disciplina.id || index}
               style={[
                 styles.tableRow,
                 { backgroundColor: index % 2 === 0 ? '#E0E0E0' : '#FFFFFF' },
               ]}
-              key={index}
             >
-              <Text style={styles.tableCell}>{disciplina}</Text>
-              <Text style={styles.tableCell}>-</Text>
-              <Text style={styles.tableCell}>-</Text>
-              <Text style={styles.tableCell}>-</Text>
-              <Text style={styles.tableCell}>-</Text>
+              <Text style={styles.tableCell}>{disciplina.nome}</Text>
+              {renderConceito(disciplina.id, selectedSemester)}
             </View>
           ))}
         </View>
