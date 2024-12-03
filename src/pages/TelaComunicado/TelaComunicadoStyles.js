@@ -5,10 +5,10 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#fff',
   },
   title: {
-    fontSize: width * 0.06, // Ajuste dinâmico baseado na largura da tela
+    fontSize: width * 0.05, 
     margin: 16,
     marginLeft: 0,
     fontWeight: 'bold',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
   },
   tab: {
-    fontSize: width * 0.04, // Ajuste dinâmico baseado na largura da tela
+    fontSize: width * 0.04, 
     paddingVertical: 8,
     paddingHorizontal: 16,
     color: '#E3E1E1',
@@ -52,12 +52,13 @@ const styles = StyleSheet.create({
   },
   comunicadoTitulo: {
     color: 'white',
-    fontSize: width * 0.04, // Ajuste dinâmico baseado na largura da tela
+    fontSize: width * 0.04, 
     fontWeight: 'bold',
   },
   pessoasTitulo: {
-    fontSize: width * 0.04, // Ajuste dinâmico baseado na largura da tela
-    fontWeight: 'bold',
+    fontSize: width * 0.034, 
+    fontWeight: '500',
+    marginTop: 20,
   },
   messageContainer: {
     flexDirection: 'row',
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   AvisoContainer: {
     backgroundColor:'#ECECEC',
     padding: 20,
-    height: height * 0.18, // Ajuste dinâmico baseado na altura da tela
+    height: height * 0.10, 
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
   },
   AvisoText: {
     color: '#939393',
-    fontSize: width * 0.03, // Ajuste dinâmico baseado na largura da tela
+    fontSize: width * 0.026, 
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -116,6 +117,15 @@ const styles = StyleSheet.create({
     transform: [{ rotate: '90deg' }],
     marginRight: 5,
     alignItems: 'center'
+  },
+
+    decor: {
+    position: 'absolute',
+    top: -10,
+    right: -40,
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
   },
 });
 
