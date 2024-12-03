@@ -1,33 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Header, Footer } from '../../imports/import';
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
+
+import { Header } from '../../imports/import';
 import { styles } from './TelaBoletimStyles';
 import Dec from '../../assets/dec.png';
 
 const TelaBoletim = ({ navigation, route }) => {
   const { idusuario = '673637a57622fcccf389f6f1' } = route.params || {};
   const { width } = Dimensions.get('window');
+
   const [selectedSemester, setSelectedSemester] = useState(1);
   const [disciplinas, setDisciplinas] = useState([]);
   const [conceitos, setConceitos] = useState([]);
 
+  // Fetch data on component mount
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const disciplinasResponse = await fetch('https://back-end-mediotec.onrender.com/api/disciplinas');
-        const disciplinasData = await disciplinasResponse.json();
-        setDisciplinas(Array.isArray(disciplinasData) ? disciplinasData : []);
-      } catch (error) {
-        console.error('Erro ao carregar disciplinas:', error);
-      }
+        const [disciplinasResponse, conceitosResponse] = await Promise.all([
+          fetch('https://back-end-mediotec.onrender.com/api/disciplinas'),
+          fetch(
+            `https://back-end-mediotec.onrender.com/api/conceitos/${idusuario}/conceitos`
+          ),
+        ]);
 
-      try {
-        const conceitosResponse = await fetch(`https://back-end-mediotec.onrender.com/api/conceitos/${idusuario}/conceitos`);
+        const disciplinasData = await disciplinasResponse.json();
         const conceitosData = await conceitosResponse.json();
+
+        setDisciplinas(Array.isArray(disciplinasData) ? disciplinasData : []);
         setConceitos(Array.isArray(conceitosData) ? conceitosData : []);
       } catch (error) {
-        console.error('Erro ao carregar conceitos:', error);
+        console.error('Erro ao carregar dados:', error);
       }
     };
 
@@ -36,44 +46,50 @@ const TelaBoletim = ({ navigation, route }) => {
 
   const getSemesterTitle = (semester) => `${semester}° Semestre`;
 
+  const validarConceito = (valor) => {
+    const validos = ['A', 'PA', 'NA', 'D', 'ND'];
+    return validos.includes(valor) ? valor : '-';
+  };
+
   const renderConceito = (disciplinaId, semestre) => {
     const conceito = conceitos.find(
       (c) => c.disciplinaId === disciplinaId && c.semestre === semestre
     );
 
-    const validarConceito = (valor) => {
-      const validos = ['A', 'PA', 'NA', 'D', 'ND'];
-      return validos.includes(valor) ? valor : '-';
-    };
-
-    return conceito ? (
+    return (
       <>
-        <Text style={styles.tableCell}>{validarConceito(conceito.av1)}</Text>
-        <Text style={styles.tableCell}>{validarConceito(conceito.av2)}</Text>
-        <Text style={styles.tableCell}>{validarConceito(conceito.noa)}</Text>
-        <Text style={styles.tableCell}>{validarConceito(conceito.mencao)}</Text>
-      </>
-    ) : (
-      <>
-        <Text style={styles.tableCell}>-</Text>
-        <Text style={styles.tableCell}>-</Text>
-        <Text style={styles.tableCell}>-</Text>
-        <Text style={styles.tableCell}>-</Text>
+        <Text style={styles.tableCell}>
+          {validarConceito(conceito?.av1 || '-')}
+        </Text>
+        <Text style={styles.tableCell}>
+          {validarConceito(conceito?.av2 || '-')}
+        </Text>
+        <Text style={styles.tableCell}>
+          {validarConceito(conceito?.noa || '-')}
+        </Text>
+        <Text style={styles.tableCell}>
+          {validarConceito(conceito?.mencao || '-')}
+        </Text>
       </>
     );
   };
 
   return (
+    
     <View style={styles.container}>
-      <Header title="KSA" />
+            <Image source={Dec} style={styles.decor} />
+      <Header />
+
+
       <ScrollView contentContainerStyle={styles.scrollView}>
+        {/* Title Section */}
         <View style={styles.titleContainer}>
-          <Icon name="play-arrow" size={width * 0.05} color="#FFA500" />
+          <View style={styles.triangle} />
           <Text style={styles.titleText}>Boletim</Text>
-          <Image source={Dec} style={styles.icon} />
         </View>
 
-        <View style={styles.semesterTabs}>
+        {/* Tabs Section */}
+        <View style={styles.tabsContainer}>
           {[1, 2, 3].map((semester) => (
             <TouchableOpacity
               key={semester}
@@ -95,6 +111,7 @@ const TelaBoletim = ({ navigation, route }) => {
           ))}
         </View>
 
+        {/* Info Section */}
         <View style={styles.infoContainer}>
           <Text style={styles.boldText}>
             Senac Mediotec Boletim {getSemesterTitle(selectedSemester)}
@@ -103,6 +120,7 @@ const TelaBoletim = ({ navigation, route }) => {
           <Text style={styles.subText}>Turma: 3A</Text>
         </View>
 
+        {/* Table Section */}
         <View style={styles.tableContainer}>
           <View style={styles.tableHeader}>
             <Text style={styles.tableHeaderText}>Disciplina</Text>
@@ -125,9 +143,10 @@ const TelaBoletim = ({ navigation, route }) => {
           ))}
         </View>
 
+        {/* Legend Section */}
         <View style={styles.legendContainer}>
           <View style={styles.legendTextContainer}>
-            <Text style={styles.legendTitle}>Legendas:</Text>
+            <Text style={styles.legendTitleBold}>Legendas:</Text>
             <Text style={styles.legendText}>A - Atendido</Text>
             <Text style={styles.legendText}>PA - Parcialmente Atendido</Text>
             <Text style={styles.legendText}>NA - Não Atendido</Text>
@@ -139,11 +158,12 @@ const TelaBoletim = ({ navigation, route }) => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.downloadButton}>
-          <Text style={styles.downloadButtonText}>Baixar</Text>
+        {/* Download Button */}
+        <TouchableOpacity style={styles.enterButton} >
+          <Text style={styles.buttonText}>Baixar</Text>
         </TouchableOpacity>
+
       </ScrollView>
-      <Footer />
     </View>
   );
 };

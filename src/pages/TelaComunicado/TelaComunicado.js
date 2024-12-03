@@ -137,7 +137,7 @@ const TelaComunicado = ({ route }) => {
 
     return (
         <View style={styles.container}>
-            <Header title="KSA" />
+            <Header/>
             <View style={styles.line}>
                 <View style={styles.triangle} />
                 <Text style={styles.title}>{turma?.nome || 'Turma'}</Text>
