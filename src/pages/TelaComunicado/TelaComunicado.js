@@ -75,7 +75,7 @@ const TelaComunicado = ({ route }) => {
         const alunos = turma?.alunos || [];
 
         const renderPerson = ({ item }) => (
-            <View style={styles.messageContainer}>
+            <View style={styles.pessoaCard}>
                 <Image style={styles.usericon} source={{ uri: item.foto }} />
                 <Text style={styles.messageText}>{item.nome}</Text>
             </View>
