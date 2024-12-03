@@ -13,18 +13,18 @@ export const styles = StyleSheet.create({
 
   decor: {
     position: 'relative',  
-    top: -80,  
-    right: -70,
-    width: 200,
-    height: 160,
+    top: -height * 0.1,  
+    right: -width * 0.2,
+    width: width * 0.5,
+    height: height * 0.2,
     resizeMode: 'contain',
   },  
 
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: height * 0.03,
-    marginTop: 40,
+    marginHorizontal: width * 0.05,
+    marginTop: height * 0.05,
   },
 
   titleText: {
@@ -36,41 +36,40 @@ export const styles = StyleSheet.create({
   triangle: {
     width: 0,
     height: 0,
-    borderLeftWidth: 10,
-    borderRightWidth: 10,
-    borderBottomWidth: 10,
+    borderLeftWidth: width * 0.025,
+    borderRightWidth: width * 0.025,
+    borderBottomWidth: height * 0.02,
     borderStyle: 'solid',
     backgroundColor: 'transparent',
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     borderBottomColor: '#FF9900',
     transform: [{ rotate: '90deg' }],
-    marginRight: 5,
+    marginRight: width * 0.01,
     alignItems: 'center'
   },
 
   semesterTab: {
-    paddingVertical: 5,
-    paddingHorizontal: 30,
+    paddingVertical: height * 0.01,
+    paddingHorizontal: width * 0.08,
     alignItems: 'flex-start',
   },
 
   tabsContainer: {
     flexDirection: 'row',
-    marginHorizontal: 20,
-    marginTop: -20,
+    marginHorizontal: width * 0.05,
+    marginTop: -height * 0.02,
     borderBottomWidth: 1,
-    paddingRight: 4, 
+    paddingRight: width * 0.01, 
     borderBottomColor: '#ddd',
-    marginBottom: 20,
+    marginBottom: height * 0.02,
   },
 
   activeTab: {
     color: '#452E94',
     borderBottomWidth: 2,
     borderBottomColor: '#452E94',
-    paddingHorizontal: 30,
-
+    paddingHorizontal: width * 0.08,
   },
 
   activeTabText: {
@@ -83,7 +82,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: width * 0.05,
-    marginVertical: 5,
+    marginVertical: height * 0.01,
   },
 
   subText: {
@@ -102,7 +101,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#000',
     borderRadius: 5,
-    marginHorizontal: width * 0.05,  // TA AQUI CARLA
+    marginHorizontal: width * 0.05,
   },
 
   tableHeader: {
@@ -139,42 +138,42 @@ export const styles = StyleSheet.create({
 
   legendContainer: {
     flexDirection: 'row',
-    marginHorizontal: 20,
+    marginHorizontal: width * 0.05,
     marginTop: height * 0.01,
   },
 
   buttonText: {
     color: '#FFF',
-    fontSize: 20,
+    fontSize: width * 0.05,
     fontWeight: '600',
   },
 
   enterButton: {
-    width: 190,
-    height: 50,
+    width: width * 0.5,
+    height: height * 0.07,
     backgroundColor: '#F90',
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 7, 
-    marginTop: 40,
+    marginTop: height * 0.05,
     alignSelf: 'center',
     fontWeight: 'bold'
   },
 
   infoContainer: {
-     marginHorizontal: 20,
-     marginVertical: 25,
+     marginHorizontal: width * 0.05,
+     marginVertical: height * 0.03,
   },
 
   legendTitleBold:{
-    marginVertical: 20,
+    marginVertical: height * 0.02,
     fontWeight: 'bold',
-    fontSize: 14,
-    marginBottom: 2,
+    fontSize: width * 0.035,
+    marginBottom: height * 0.005,
   },
 
   legendText:{
-    fontSize: 12,
+    fontSize: width * 0.03,
   },
 
   teste:{
