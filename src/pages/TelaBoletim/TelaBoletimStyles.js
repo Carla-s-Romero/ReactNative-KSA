@@ -10,10 +10,10 @@ export const styles = StyleSheet.create({
     paddingBottom: height * 0.2,
   },
   icon: {
-    width: width * 0.2,
-    height: width * 0.2,
+    width: width * 0.3,
+    height: width * 0.3,
     position: 'absolute',
-    top: '-200%',
+    top: '-350%',
     right: '0%',
   },
   titleContainer: {
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     marginVertical: height * 0.02,
   },
   titleText: {
-    fontSize: width * 0.045,
+    fontSize: width * 0.04,  
     fontWeight: 'bold',
     marginLeft: width * 0.02,
   },
@@ -35,11 +35,28 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#6A1B9A',
     borderBottomWidth: 2,
   },
+  rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: width * 0.05,
+    marginVertical: 5,
+  },
+  subText: {
+    fontSize: width * 0.035, 
+    color: '#000',
+  },
+  boldText: {
+    fontWeight: 'bold',
+    fontSize: width * 0.035,  
+    color: '#000',
+  },
   tableContainer: {
     marginTop: height * 0.02,
     borderWidth: 1,
     borderColor: '#000',
     borderRadius: 5,
+    marginHorizontal: width * 0.05,  // TA AQUI CARLA
   },
   tableHeader: {
     flexDirection: 'row',
@@ -54,6 +71,7 @@ export const styles = StyleSheet.create({
     color: '#FFF',
     borderRightWidth: 1,
     borderRightColor: '#000',
+    fontSize: width * 0.03,  
   },
   tableRow: {
     flexDirection: 'row',
@@ -62,9 +80,9 @@ export const styles = StyleSheet.create({
   },
   tableCell: {
     flex: 1,
-    paddingVertical: height * 0.02,
+    paddingVertical: height * 0.015,  
     textAlign: 'center',
-    fontSize: width * 0.035,
+    fontSize: width * 0.03,  
     borderRightWidth: 1,
     borderRightColor: '#000',
   },

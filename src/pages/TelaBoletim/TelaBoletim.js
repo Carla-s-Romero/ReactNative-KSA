@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Header, Footer } from '../../imports/import'; // Mantendo a estrutura de importação
+import { Header, Footer } from '../../imports/import';
 import { styles } from './TelaBoletimStyles';
-import Dec from '../../assets/dec.png'; // Importação correta da imagem
+import Dec from '../../assets/dec.png'; 
 
 const TelaBoletim = ({ navigation }) => {
   const { width } = Dimensions.get('window');
-  const [selectedSemester, setSelectedSemester] = useState(1); // Estado para selecionar o semestre
-  
+  const [selectedSemester, setSelectedSemester] = useState(1);
+
   const materias = [
     'Biologia',
     'Educação Física',
@@ -24,8 +24,7 @@ const TelaBoletim = ({ navigation }) => {
     'Programaê!',
   ];
 
-
-  const getSemesterTitle = (semester) => `Semestre ${semester}`;
+  const getSemesterTitle = (semester) => `${semester}° Semestre`;
 
   return (
     <View style={styles.container}>
@@ -34,10 +33,9 @@ const TelaBoletim = ({ navigation }) => {
         <View style={styles.titleContainer}>
           <Icon name="play-arrow" size={width * 0.05} color="#FFA500" />
           <Text style={styles.titleText}>Boletim</Text>
-          <Image source={Dec} style={styles.icon} /> {/* Exibindo a imagem Dec */}
+          <Image source={Dec} style={styles.icon} />
         </View>
 
-        {/* Aba de seleção de semestres */}
         <View style={styles.semesterTabs}>
           {[1, 2, 3].map((semester) => (
             <TouchableOpacity
@@ -60,12 +58,14 @@ const TelaBoletim = ({ navigation }) => {
           ))}
         </View>
 
-        <Text style={styles.semesterTitle}>{getSemesterTitle(selectedSemester)}</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.boldText}>
+            Senac Mediotec Boletim {getSemesterTitle(selectedSemester)}
+          </Text>
+          <Text style={styles.subText}>Aluno: Anna Carolina</Text>
+          <Text style={styles.subText}>Turma: 3A</Text>
+        </View>
 
-        <Text style={styles.subText}>Aluno: Anna Carolina</Text>
-        <Text style={styles.subText}>Turma: 3A</Text>
-
-        {/* Tabela de disciplinas */}
         <View style={styles.tableContainer}>
           <View style={styles.tableHeader}>
             <Text style={styles.tableHeaderText}>Disciplina</Text>
@@ -91,7 +91,6 @@ const TelaBoletim = ({ navigation }) => {
           ))}
         </View>
 
-        {/* Legenda */}
         <View style={styles.legendContainer}>
           <View style={styles.legendTextContainer}>
             <Text style={styles.legendTitle}>Legendas:</Text>
@@ -100,7 +99,9 @@ const TelaBoletim = ({ navigation }) => {
             <Text style={styles.legendText}>NA - Não Atendido</Text>
             <Text style={styles.legendText}>D - Desenvolvido</Text>
             <Text style={styles.legendText}>ND - Não Desenvolvido</Text>
-            <Text style={styles.legendText}>NOA - Novas oportunidades de aprendizado</Text>
+            <Text style={styles.legendText}>
+              NOA - Novas oportunidades de aprendizado
+            </Text>
           </View>
         </View>
 
