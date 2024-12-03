@@ -49,10 +49,12 @@ const TelaTurmas = ({ navigation }) => {
           <View style={styles.turmaCardHeaderDesc}>
           </View>
         </ImageBackground>
+
         <View style={styles.turmaDesc}>
-          <Text style={styles.turmaName}>{item.nome}</Text>
-          <Text style={styles.turmaCardHeaderText}>Turno: {item.turno}</Text>
-        </View>
+          <Text style={styles.turmaName} numberOfLines={1} ellipsizeMode="tail"> {item.nome}</Text>
+            <Text style={styles.turmaCardHeaderText}>Turno: {item.turno}</Text>
+              </View>
+
         <View style={styles.turmaDetail}>
           <Image source={require('../../assets/professor.png')} style={styles.detailIcon} />
           <Text style={styles.turmaDetailText} numberOfLines={1} ellipsizeMode="tail">{nomeProf}</Text>

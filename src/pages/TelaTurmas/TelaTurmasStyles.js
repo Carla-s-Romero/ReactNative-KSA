@@ -32,6 +32,7 @@ export const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: '#f0f0f0',
     alignItems: 'center',
+    textAlign: 'left',
     maxWidth: '45%',
     borderStyle: 'solid',
     borderColor: '#333',
@@ -41,8 +42,12 @@ export const styles = StyleSheet.create({
   },
   turmaName: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
+    marginLeft: -2,
     color: '#333',
+    textAlign: 'left', // Centraliza o texto horizontalmente
+    width: '90%', // Define a largura máxima do texto
+    alignSelf: 'left', // Centraliza o texto no container
   },
   turmaDesc: {
     paddingTop: 20, 
