@@ -34,6 +34,7 @@ const Form = ({ navigation }) => {
 
       if (response.ok) {
         await AsyncStorage.setItem('token', data.token); // Armazena o token
+        await AsyncStorage.setItem('userId', data.userId); // Armazena o Id do Usuario
         navigation.navigate('TelaTurmas');
       } else {
         setErro(data.message || 'Erro no login. Tente novamente.');
