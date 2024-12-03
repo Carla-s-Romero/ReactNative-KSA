@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
     alignItems: 'center'
   },
+
     decor: {
     position: 'absolute',
     top: -10,
