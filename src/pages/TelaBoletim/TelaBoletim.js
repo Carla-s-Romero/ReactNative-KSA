@@ -9,7 +9,7 @@ const TelaBoletim = ({ navigation }) => {
   const { width } = Dimensions.get('window');
   const [selectedSemester, setSelectedSemester] = useState(1);
 
-  const materias = [
+ {} const materias = [
     'Biologia',
     'Educação Física',
     'Física',
