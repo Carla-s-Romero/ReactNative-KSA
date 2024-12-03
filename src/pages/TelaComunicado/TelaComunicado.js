@@ -11,7 +11,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from './TelaComunicadoStyles';
-import { Header, Footer, MessageCard } from '../../imports/import';
+import { Header, MessageCard } from '../../imports/import';
 
 /**
  * Tela de Comunicados
@@ -87,6 +87,7 @@ const TelaComunicado = ({ route }) => {
                     <Text style={styles.pessoasTitulo}>Professores</Text>
                 </View>
                 <FlatList
+                    style={styles.FlatList}
                     data={professores}
                     keyExtractor={(item) => item._id}
                     renderItem={renderPerson}
@@ -141,7 +142,7 @@ const TelaComunicado = ({ route }) => {
                 <View style={styles.triangle} />
                 <Text style={styles.title}>{turma?.nome || 'Turma'}</Text>
             </View>
-            <Image source={require('../../assets/decorTelaComunicados.png')} style={styles.decorTela} />
+            <Image source={require('../../assets/decorTelaTurmas.png')} style={styles.decor}/>
             <View style={styles.tabsContainer}>
                 <TouchableOpacity onPress={() => setActiveTab('Mural')}>
                     <Text style={[styles.tab, activeTab === 'Mural' && styles.activeTab]}>Mural</Text>
@@ -154,12 +155,11 @@ const TelaComunicado = ({ route }) => {
             {activeTab === 'Mural' && (
                 <View style={styles.AvisoContainer}>
                     <Text style={styles.AvisoText}>
-                        <Ionicons name="lock-closed" size={12} color="#939393" />{' '}
+                        <Ionicons name="lock-closed" size={9} color="#939393" />{' '}
                         Apenas o professor pode enviar mensagens neste canal. Fique atento às notificações para não perder nenhuma informação importante.
                     </Text>
                 </View>
             )}
-            <Footer />
         </View>
     );
 };

@@ -22,20 +22,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  triangle: {
-    width: 0,
-    height: 0,
-    borderLeftWidth: 7,
-    borderRightWidth: 7,
-    borderBottomWidth: 7,
-    borderStyle: 'solid',
-    backgroundColor: 'transparent',
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderBottomColor: '#FF9900',
-    transform: [{ rotate: '90deg' }],
-    marginRight: 5,
-  },
+
   listContainer: {
     paddingHorizontal: 10,
     paddingVertical: 20,
@@ -126,4 +113,8 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
+
+  FlatList:{
+    backgroundColor: '#000',
+  }
 });
