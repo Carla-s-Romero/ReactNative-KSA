@@ -44,8 +44,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 8,
   },
+  pessoasContainer: {
+    paddingTop: height * 0.01, // Ajuste dinâmico baseado na altura da tela
+    paddingBottom: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
   comunicadoTitulo: {
     color: 'white',
+    fontSize: width * 0.04, // Ajuste dinâmico baseado na largura da tela
+    fontWeight: 'bold',
+  },
+  pessoasTitulo: {
     fontSize: width * 0.04, // Ajuste dinâmico baseado na largura da tela
     fontWeight: 'bold',
   },
