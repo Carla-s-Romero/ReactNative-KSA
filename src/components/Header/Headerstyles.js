@@ -2,13 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: 30,
     backgroundColor: '#F5F5F5',
     zIndex: 2,
   },
   header: {
     width: '100%',
-    height: 60,
+    height: 80,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -19,14 +18,16 @@ export const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: { width: 0, height: 2 },
   },
-  title: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: 'bold',
-    fontFamily: 'Open Sans Semi Bold',
-    flex: 1,
-  },
+
   icon: {
     padding: 10,
+    marginTop: '6%',
   },
+
+  logo: {
+    width: 48,
+    height: 23,
+    marginTop: '7%',
+  },
+
 });

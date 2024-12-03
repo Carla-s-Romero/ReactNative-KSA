@@ -50,6 +50,7 @@ export const styles = StyleSheet.create({
     borderColor: '#333',
     borderWidth: 1,
     paddingBottom: 15,
+    justifyContent: 'space-between',
   },
   turmaName: {
     fontWeight: 'bold',
@@ -57,12 +58,6 @@ export const styles = StyleSheet.create({
     color: '#333',
   },
   turmaDesc: {
-    fontSize: 14,
-    color: '#333',
-  },
-  turmaLine: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#FF9900',
     paddingTop: 20, 
     paddingBottom: 10,
     width: '80%',
@@ -83,6 +78,8 @@ export const styles = StyleSheet.create({
     marginRight: 5,
   },
   turmaDetail: {
+    borderTopWidth: 1,
+    borderTopColor: '#FF9900',
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: 5,

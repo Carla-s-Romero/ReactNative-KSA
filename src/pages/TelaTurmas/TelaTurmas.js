@@ -49,7 +49,7 @@ const TelaTurmas = ({ navigation }) => {
           <View style={styles.turmaCardHeaderDesc}>
           </View>
         </ImageBackground>
-        <View style={styles.turmaLine}>
+        <View style={styles.turmaDesc}>
           <Text style={styles.turmaName}>{item.nome}</Text>
           <Text style={styles.turmaCardHeaderText}>Turno: {item.turno}</Text>
         </View>
