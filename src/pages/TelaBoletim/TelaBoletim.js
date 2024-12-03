@@ -77,19 +77,19 @@ const TelaBoletim = ({ navigation, route }) => {
   return (
     
     <View style={styles.container}>
-            <Image source={Dec} style={styles.decor} />
+        
       <Header />
+      <View style={styles.teste}> 
+          <View style={styles.titleContainer}>
+              <View style={styles.triangle} />
+              <Text style={styles.titleText}>Boletim</Text>
+          </View>
 
-
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        {/* Title Section */}
-        <View style={styles.titleContainer}>
-          <View style={styles.triangle} />
-          <Text style={styles.titleText}>Boletim</Text>
-        </View>
-
-        {/* Tabs Section */}
-        <View style={styles.tabsContainer}>
+          <Image source={Dec} style={styles.decor} />
+      </View>
+     
+      {/* Tabs Section */}
+      <View style={styles.tabsContainer}>
           {[1, 2, 3].map((semester) => (
             <TouchableOpacity
               key={semester}
@@ -111,6 +111,12 @@ const TelaBoletim = ({ navigation, route }) => {
           ))}
         </View>
 
+
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        {/* Title Section */}
+   
+
+       
         {/* Info Section */}
         <View style={styles.infoContainer}>
           <Text style={styles.boldText}>

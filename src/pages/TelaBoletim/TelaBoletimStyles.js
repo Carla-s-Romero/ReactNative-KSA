@@ -6,28 +6,33 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5F5',
   },
+  
   scrollView: {
     paddingBottom: height * 0.2,
   },
+
   decor: {
-    position: 'absolute',
-    right: -40,
+    position: 'relative',  
+    top: -80,  
+    right: -70,
     width: 200,
     height: 160,
     resizeMode: 'contain',
-  },
+  },  
+
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: height * 0.03,
     marginTop: 40,
-    marginBottom: 20,
   },
+
   titleText: {
     fontSize: width * 0.05,  
     fontWeight: 'bold',
     marginLeft: width * 0.01,
   },
+
   triangle: {
     width: 0,
     height: 0,
@@ -43,24 +48,29 @@ export const styles = StyleSheet.create({
     marginRight: 5,
     alignItems: 'center'
   },
+
   semesterTab: {
-    paddingVertical: 8,
+    paddingVertical: 5,
     paddingHorizontal: 30,
     alignItems: 'flex-start',
   },
+
   tabsContainer: {
     flexDirection: 'row',
     marginHorizontal: 20,
+    marginTop: -20,
     borderBottomWidth: 1,
     paddingRight: 4, 
     borderBottomColor: '#ddd',
+    marginBottom: 20,
   },
+
   activeTab: {
     color: '#452E94',
     borderBottomWidth: 2,
     borderBottomColor: '#452E94',
-    paddingRight: 4,
     paddingHorizontal: 30,
+
   },
 
   rowContainer: {
@@ -70,15 +80,18 @@ export const styles = StyleSheet.create({
     paddingHorizontal: width * 0.05,
     marginVertical: 5,
   },
+
   subText: {
     fontSize: width * 0.035, 
     color: '#000',
   },
+
   boldText: {
     fontWeight: 'bold',
     fontSize: width * 0.035,  
     color: '#000',
   },
+
   tableContainer: {
     marginTop: height * 0.02,
     borderWidth: 1,
@@ -86,12 +99,14 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: width * 0.05,  // TA AQUI CARLA
   },
+
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: '#FFA500',
     borderBottomWidth: 1,
     borderBottomColor: '#000',
   },
+
   tableHeaderText: {
     flex: 1,
     textAlign: 'center',
@@ -101,11 +116,13 @@ export const styles = StyleSheet.create({
     borderRightColor: '#000',
     fontSize: width * 0.03,  
   },
+
   tableRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: '#000',
   },
+
   tableCell: {
     flex: 1,
     paddingVertical: height * 0.015,  
@@ -114,11 +131,13 @@ export const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderRightColor: '#000',
   },
+
   legendContainer: {
     flexDirection: 'row',
     marginHorizontal: 20,
     marginTop: height * 0.01,
   },
+
   buttonText: {
     color: '#FFF',
     fontSize: 20,
@@ -141,13 +160,19 @@ export const styles = StyleSheet.create({
      marginHorizontal: 20,
      marginVertical: 25,
   },
+
   legendTitleBold:{
     marginVertical: 20,
     fontWeight: 'bold',
     fontSize: 14,
     marginBottom: 2,
   },
+
   legendText:{
     fontSize: 12,
+  },
+
+  teste:{
+    flexDirection: 'row',
   }
 });
