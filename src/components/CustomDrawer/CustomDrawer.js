@@ -23,8 +23,8 @@ const CustomDrawer = () => {
             source={require('../../assets/Ellipse 204.png')} 
             style={styles.logo} 
           />
-          <Text style={styles.username}>Kleber Domingues</Text>
-          <Text style={styles.email}>Aluno@esamac-paulista.pe.com.br</Text>
+          <Text style={styles.username}>Guilherme Domingues</Text>
+          <Text style={styles.email}>gui@email.com</Text>
         </View>
       </ImageBackground>
 

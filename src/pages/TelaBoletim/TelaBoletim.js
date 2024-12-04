@@ -122,7 +122,7 @@ const TelaBoletim = ({ navigation, route }) => {
           <Text style={styles.boldText}>
             Senac Mediotec Boletim {getSemesterTitle(selectedSemester)}
           </Text>
-          <Text style={styles.subText}>Aluno: Anna Carolina</Text>
+          <Text style={styles.subText}>Aluno: Guilherme Domingues</Text>
           <Text style={styles.subText}>Turma: 3A</Text>
         </View>
 

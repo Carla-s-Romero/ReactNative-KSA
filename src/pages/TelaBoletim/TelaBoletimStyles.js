@@ -4,7 +4,7 @@ const { width, height } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#fff',
   },
   
   scrollView: {
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: height * 0.03,
-    marginTop: 40,
+    marginTop: -5,
   },
 
   titleText: {
@@ -53,6 +53,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 30,
     alignItems: 'flex-start',
+    marginTop: -30,
   },
 
   tabsContainer: {
@@ -93,10 +94,9 @@ export const styles = StyleSheet.create({
   },
 
   tableContainer: {
-    marginTop: height * 0.02,
-    borderWidth: 1,
+    marginTop: height * 0.01,
+    borderWidth: 0.6,
     borderColor: '#000',
-    borderRadius: 5,
     marginHorizontal: width * 0.05,  // TA AQUI CARLA
   },
 
@@ -105,6 +105,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFA500',
     borderBottomWidth: 1,
     borderBottomColor: '#000',
+    height: 40,
   },
 
   tableHeaderText: {
@@ -115,6 +116,7 @@ export const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderRightColor: '#000',
     fontSize: width * 0.03,  
+    marginTop: 10, 
   },
 
   tableRow: {
