@@ -8,7 +8,7 @@ import { CustomDrawer, TelaLogin, TelaTurmas, TelaComunicado, TelaContato, TelaH
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-// DrawerNavigator configurado
+// Definição do DrawerNavigator
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator 
@@ -16,7 +16,7 @@ const DrawerNavigator = () => {
       drawerContent={CustomDrawer} 
       screenOptions={{
         drawerPosition: 'right', 
-        headerShown: false, 
+        headerShown: false, // Esconde o cabeçalho do Drawer
       }}
     >
       <Drawer.Screen name="TelaTurmas" component={TelaTurmas} />
@@ -31,31 +31,45 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="TelaLogin">
+        {/* Tela de login (não tem header) */}
         <Stack.Screen 
           name="TelaLogin" 
           component={TelaLogin} 
           options={{ headerShown: false }} 
         />
+        
+        {/* Outras telas de navegação dentro do Stack */}
         <Stack.Screen 
           name="TelaHorarios" 
           component={TelaHorarios} 
           options={{ headerShown: false }} 
         />
-        {/* TelaComunicado no Stack, mas não no Drawer */}
+
+        <Stack.Screen 
+          name="TelaContato" 
+          component={TelaContato} 
+          options={{ headerShown: false }} 
+        />
+
+        <Stack.Screen 
+          name="TelaBoletim" 
+          component={TelaBoletim} 
+          options={{ headerShown: false }} 
+        />
+      
         <Stack.Screen 
           name="TelaComunicado" 
           component={TelaComunicado} 
-          options={{ 
-            headerShown: false, 
-            gestureEnabled: true 
-          }} 
+          options={{ headerShown: false, gestureEnabled: true }} 
         />
-        {/* Depois de TelaHorarios, leva para o DrawerNavigator */}
+
+        {/* Tela de Turmas com DrawerNavigator */}
         <Stack.Screen 
           name="TelaTurmas" 
           component={DrawerNavigator} 
           options={{ headerShown: false }} 
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

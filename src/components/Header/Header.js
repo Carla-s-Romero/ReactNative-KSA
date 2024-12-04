@@ -2,16 +2,15 @@ import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation, useRoute } from '@react-navigation/native'; // Importando hook de navegação e rota
+import { useNavigation, DrawerActions } from '@react-navigation/native'; // Importando DrawerActions
 import { styles } from './Headerstyles';
 
 const Header = () => {
-  const navigation = useNavigation();
-  const route = useRoute(); // Obter a rota atual
+  const navigation = useNavigation(); // Hook de navegação
 
-  // Verifique se a tela atual é uma das telas do Drawer (por exemplo, TelaTurmas)
-  const isDrawerScreen = [,'TelaTurmas', 'TelaContato', 'TelaBoletim', 'TelaHorarios'].includes(route.name);
-
+  const drawerScreens = ['TelaTurmas', 'TelaContato', 'TelaBoletim', 'TelaHorarios'];
+  const isDrawerScreen = drawerScreens.includes(navigation.getState().routeNames[navigation.getState().index]);
+  
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -22,11 +21,10 @@ const Header = () => {
       >
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
       
-        {/* Só mostrar o botão do menu se a tela atual estiver dentro do Drawer */}
         {isDrawerScreen && (
           <TouchableOpacity
             style={styles.icon}
-            onPress={() => navigation.openDrawer()} // Abre o menu lateral
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())} // Usando DrawerActions
           >
             <Ionicons name="menu" size={28} color="white" />
           </TouchableOpacity>

@@ -1,10 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-
+import { useNavigation, useRoute } from '@react-navigation/native'; // Adicionando useRoute
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Exemplo com MaterialIcons
 
 const CustomDrawer = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation(); // Hook de navegação
+  const route = useRoute(); // Hook para pegar a rota atual
+  
+  // Defina as telas que devem exibir o botão de menu
+  const drawerScreens = ['TelaTurmas', 'TelaContato', 'TelaBoletim', 'TelaHorarios'];
+  const isDrawerScreen = drawerScreens.includes(route.name); // Verifique se a tela atual está na lista de telas do drawer
 
   return (
     <View style={styles.container}>
@@ -23,43 +28,48 @@ const CustomDrawer = () => {
         </View>
       </ImageBackground>
 
-      {/* Itens de navegação */}
       <ScrollView style={styles.menuContainer}>
-        <TouchableOpacity 
-          style={styles.menuItem} 
-          onPress={() => navigation.navigate('TelaTurmas')} // Passando o nome da tela
-        >
-          <Text style={styles.menuItemText}>Turmas</Text>
+
+      <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaHorarios')}>
+         <Image source={require('../../assets/IconCalendario.png')}   style={styles.iconMenu} />
+          <Text style={styles.menuItemText}>Calendário</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.menuItem} 
-          onPress={() => navigation.navigate('TelaBoletim')} // Passando o nome da tela
-        >
+        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaBoletim')}>
+        <Image source={require('../../assets/IconBoletim.png')}   style={styles.iconMenu} />
           <Text style={styles.menuItemText}>Boletim</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.menuItem} 
-          onPress={() => navigation.navigate('TelaHorarios')} // Passando o nome da tela
-        >
+        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('')}>
+        <Image source={require('../../assets/IconFinanceiro.png')}   style={styles.iconMenu} />
           <Text style={styles.menuItemText}>Financeiro</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaTurmas')}>
+        <Image source={require('../../assets/IconTurmas.png')}  style={styles.iconMenu} />
+          <Text style={styles.menuItemText}>Turmas</Text>
+        </TouchableOpacity>
+    
         {/* Sistema (sub-itens) */}
         <View style={styles.systemContainer}>
+          <View style={styles.system}>
+          <View style={styles.triangle} />
           <Text style={styles.systemHeader}>Sistema</Text>
+          </View>
+          
           <TouchableOpacity 
             style={styles.menuItem} 
-            onPress={() => navigation.navigate('TelaConfiguracao')} // Certifique-se de que a tela está registrada
+            onPress={() => navigation.navigate('TelaConfiguracao')}
           >
+            <Icon name="settings" size={20} color="#FF9900" style={styles.icon} />
             <Text style={styles.menuItemText}>Configuração</Text>
           </TouchableOpacity>
 
           <TouchableOpacity 
             style={styles.menuItem} 
-            onPress={() => navigation.navigate('TelaContato')} // Passando o nome da tela
+            onPress={() => navigation.navigate('TelaContato')}
           >
+            <Icon name="support-agent" size={20} color="#FF9900" style={styles.icon} />
             <Text style={styles.menuItemText}>Suporte</Text>
           </TouchableOpacity>
         </View>
@@ -74,10 +84,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
   },
   header: {
-    height: 210, // Define a altura do cabeçalho
+    height: 210,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 40, // Ajuste para dar espaço ao conteúdo no cabeçalho
+    paddingTop: 40,
   },
   profileContainer: {
     alignItems: 'center',
@@ -100,28 +110,52 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     flex: 1,
-    marginTop: 20, // Espaço entre o cabeçalho e os itens do menu
+    marginTop: 20,
   },
   menuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
     padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+  },
+  iconMenu: {
+    marginLeft: 10,
+    marginRight: 10,
+    width: 30,
+    height: 30,
   },
   menuItemText: {
     fontSize: 16,
   },
   systemContainer: {
     marginTop: 20,
-    borderTopWidth: 1,
-    borderTopColor: '#ddd',
     paddingTop: 10,
   },
   systemHeader: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
     paddingLeft: 15,
     color: '#999',
+    marginTop: -4,
   },
+  triangle: {
+    width: 0,
+    height: 0,
+    borderLeftWidth: 10,
+    borderRightWidth: 10,
+    borderBottomWidth: 10,
+    borderStyle: 'solid',
+    backgroundColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#FF9900',
+    transform: [{ rotate: '90deg' }],
+    marginLeft: 20,
+    marginRight: 3,
+    alignItems: 'center'
+  },
+  system: {
+    flexDirection: 'row',
+  }
 });
 
 export default CustomDrawer;
