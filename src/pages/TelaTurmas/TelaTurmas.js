@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, TouchableOpacity, ImageBackground, RefreshControl} from 'react-native';
 import { styles } from './TelaTurmasStyles';
-import { Header, Footer } from '../../imports/import';
+import { Header } from '../../imports/import';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TelaTurmas = ({ navigation }) => {
@@ -65,7 +65,7 @@ const TelaTurmas = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Header title="KSA" />
+      <Header/>
       <Image source={require('../../assets/decorTelaTurmas.png')} style={styles.decor} />
       <View style={styles.line}>
         <View style={styles.triangle} />
