@@ -40,17 +40,9 @@ const CustomDrawer = () => {
           <Text style={styles.menuItemText}>Boletim</Text>
         </TouchableOpacity>
 
-<<<<<<< HEAD
         <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('')}>
         <Image source={require('../../assets/IconFinanceiro.png')}   style={styles.iconMenu} />
           <Text style={styles.menuItemText}>Financeiro</Text>
-=======
-        <TouchableOpacity 
-          style={styles.menuItem} 
-          onPress={() => navigation.navigate('TelaHorarios')} // Passando o nome da tela
-        >
-          <Text style={styles.menuItemText}>Horários</Text>
->>>>>>> baf33c2ec32e8b93b9fdd90f9f9045007ac691a9
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaTurmas')}>
