@@ -10,6 +10,8 @@ import Header from '../components/Header/Header';
 import Form from '../components/Form/Form';
 import MessageCard from '../components/MessageCard/MessageCard';
 
+import CustomDrawer from '../components/CustomDrawer/CustomDrawer';
+
 export {
   Form,
   Footer,
@@ -20,5 +22,6 @@ export {
   TelaLogin,
   TelaTurmas,
   TelaComunicado,
-  TelaHorarios
+  TelaHorarios,
+  CustomDrawer
 };

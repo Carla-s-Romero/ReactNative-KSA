@@ -43,12 +43,12 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  decorTela: {
+  decor: {
     position: 'absolute',
-    top: '-10%',
-    right: '-36%',
-    width: width * 0.9,
-    height: width * 0.34,
+    top: -10,
+    right: -40,
+    width: 150,
+    height: 150,
     resizeMode: 'contain',
   },
 

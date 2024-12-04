@@ -86,6 +86,7 @@ const TelaHorarios = () => {
   return (
     <View style={styles.container}>
       <Header title="KSA" />
+      <Image source={require('../../assets/decorTelaTurmas.png')} style={styles.decor} />
       <View style={styles.content}>
         <View style={styles.textComSetaContainer}>
           <Image source={require('../../assets/Seta.png')} style={styles.setaInline} />
