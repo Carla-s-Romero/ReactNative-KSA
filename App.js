@@ -41,7 +41,11 @@ export default function App() {
           component={TelaHorarios} 
           options={{ headerShown: false }} 
         />
-        {/* TelaComunicado no Stack, mas não no Drawer */}
+        <Stack.Screen
+          name="TelaBoletim"
+          component={TelaBoletim}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen 
           name="TelaComunicado" 
           component={TelaComunicado} 
@@ -50,11 +54,15 @@ export default function App() {
             gestureEnabled: true 
           }} 
         />
-        {/* Depois de TelaHorarios, leva para o DrawerNavigator */}
         <Stack.Screen 
           name="TelaTurmas" 
           component={DrawerNavigator} 
           options={{ headerShown: false }} 
+        />
+        <Stack.Screen
+          name="TelaContato"
+          component={TelaContato}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

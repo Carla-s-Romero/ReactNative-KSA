@@ -43,7 +43,7 @@ const CustomDrawer = () => {
           style={styles.menuItem} 
           onPress={() => navigation.navigate('TelaHorarios')} // Passando o nome da tela
         >
-          <Text style={styles.menuItemText}>Financeiro</Text>
+          <Text style={styles.menuItemText}>Horários</Text>
         </TouchableOpacity>
 
         {/* Sistema (sub-itens) */}
