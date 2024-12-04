@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FF9900',
     marginTop: 10,
+    marginBottom: 4,
   },
 
   
@@ -22,101 +23,134 @@ export const styles = StyleSheet.create({
   },
 
   subtitleDescription:{
-    padding: 10,
+    paddingHorizontal: 20,
   },
-  
+
   locationsContainer: {
+    marginHorizontal: 20,
     marginBottom: 20,
+    marginTop: 20,
   },
+
   locationItem: {
     flexDirection: 'row',
     marginBottom: 15,
     alignItems: 'center',
   },
+
   locationImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 8,
+    width: 70,
+    height: 70,
     marginRight: 10,
   },
+
   locationText: {
     flex: 1,
   },
+
   locationTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: '#333',
   },
+
   locationPhone: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#1E90FF',
     marginTop: 4,
   },
+  
   locationAddress: {
     fontSize: 12,
-    color: '#555',
+    color: '#1E90FF',
     marginTop: 4,
     lineHeight: 18,
   },
-  errorButton: {
-    padding: 15,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    marginTop: 10,
-    backgroundColor: '#f9f9f9',
+
+  icon:{
+    width: 15,
+    height: 15,
+    marginTop: 6,
+    marginRight: 4,
   },
+
+  infor:{
+    display: 'flex',
+    flexDirection: 'row',
+  },
+
+  errorButton: {
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: '#fff',
+    flexDirection: 'row',
+    marginTop: 10,
+    backgroundColor: '#ffff',
+  },
+
+  bug:{
+    width: 50,
+    height: 50,
+    marginRight: 10,
+  },
+
   errorText: {
     fontSize: 14,
     fontWeight: 'bold',
     color: '#333',
   },
   errorSubText: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#777',
     marginTop: 4,
     lineHeight: 18,
+    flexWrap: 'wrap',
+    width: '30%'
   },
+  email:{
+    color: '#0E41E5',
+    textDecorationLine: 'underline',
+  },
+
   faqContainer: {
-    marginTop: 10,
+    marginTop: 20,
+    paddingHorizontal: 15,
   },
+
+  faqContainer: {
+    marginTop: 20,
+    paddingHorizontal: 15,
+    marginBottom: 60,
+  },
+  
   faqItem: {
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    flexDirection: 'row', // Ícones e texto lado a lado
+    justifyContent: 'space-between', // Espaço entre o texto e o ícone
+    alignItems: 'center', // Alinhamento vertical
+    borderBottomWidth: 1, // Linha inferior para separar itens
+    borderBottomColor: '#ccc', 
+    paddingVertical: 15, // Espaçamento interno vertical
   },
+  
   faqQuestion: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#333',
+    fontSize: 16, // Tamanho do texto da pergunta
+    fontWeight: 'bold', // Texto em negrito para destaque
+    color: '#000',
+    flex: 1, // Ocupa o espaço restante
   },
+  
   faqAnswer: {
-    fontSize: 12,
-    color: '#777',
-    marginTop: 5,
-    lineHeight: 18,
+    fontSize: 14,
+    color: '#555', // Cor mais discreta para respostas
+    marginTop: 10, // Espaço superior para separar da pergunta
+    lineHeight: 20, // Melhor leitura
   },
-  teamContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 15,
+  
+  iconPerguntas: {
+    fontSize: 20, // Tamanho do ícone
+    color: '#FF9900', // Cor do ícone combinando com o tema
+    marginLeft: 10, // Espaçamento entre o texto e o ícone
   },
-  teamMember: {
-    alignItems: 'center',
-  },
-  teamImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    marginBottom: 5,
-    backgroundColor: '#f0f0f0',
-  },
-  teamName: {
-    fontSize: 12,
-    color: '#333',
-  },
-
-
 
   triangle: {
     width: 0,

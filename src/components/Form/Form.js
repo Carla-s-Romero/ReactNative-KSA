@@ -46,7 +46,7 @@ const Form = ({ navigation }) => {
 
   return (
     
-  
+
     <View style={styles.container}>
       <Image style={styles.imageLogin} source={require('../../assets/LoginDeccoracao.png')} />
       <View style={styles.textContainer}>
