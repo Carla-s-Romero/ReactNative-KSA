@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,28 +9,27 @@ export const styles = StyleSheet.create({
   },
 
   subtitle: {
-    fontSize: 14,
+    fontSize: width < 400 ? 13 : 14, // Ajuste baseado na largura da tela
     fontWeight: 'bold',
     color: '#FF9900',
     marginTop: 10,
     marginBottom: 4,
   },
 
-  
   description: {
-    fontSize: 12,
+    fontSize: width < 400 ? 12 : 12, // Ajuste para telas menores
     color: '#555',
     marginBottom: 10,
-    lineHeight: 20,
+    lineHeight: 18,
   },
 
-  subtitleDescription:{
-    paddingHorizontal: 20,
+  subtitleDescription: {
+    paddingHorizontal: width < 400 ? 18 : 20, // Menos padding para telas menores
   },
 
   locationsContainer: {
-    marginHorizontal: 20,
-    marginBottom: 20,
+    marginHorizontal: width < 400 ? 15 : 20, 
+    marginBottom: -10,
     marginTop: 20,
   },
 
@@ -39,8 +40,8 @@ export const styles = StyleSheet.create({
   },
 
   locationImage: {
-    width: 70,
-    height: 70,
+    width: width < 400 ? 60 : 70, // Ajuste para telas menores
+    height: width < 400 ? 60 : 70,
     marginRight: 10,
   },
 
@@ -49,38 +50,38 @@ export const styles = StyleSheet.create({
   },
 
   locationTitle: {
-    fontSize: 14,
+    fontSize: width < 400 ? 12 : 14,
     fontWeight: 'bold',
     color: '#333',
   },
 
   locationPhone: {
-    fontSize: 12,
+    fontSize: width < 400 ? 10 : 12,
     color: '#1E90FF',
     marginTop: 4,
   },
-  
+
   locationAddress: {
-    fontSize: 12,
+    fontSize: width < 400 ? 10 : 12,
     color: '#1E90FF',
     marginTop: 4,
     lineHeight: 18,
   },
 
-  icon:{
+  icon: {
     width: 15,
     height: 15,
     marginTop: 6,
     marginRight: 4,
   },
 
-  infor:{
+  infor: {
     display: 'flex',
     flexDirection: 'row',
   },
 
   errorButton: {
-    marginHorizontal: 20,
+    marginHorizontal: width < 400 ? 15 : 20,
     borderWidth: 1,
     borderColor: '#fff',
     flexDirection: 'row',
@@ -88,68 +89,65 @@ export const styles = StyleSheet.create({
     backgroundColor: '#ffff',
   },
 
-  bug:{
+  bug: {
     width: 50,
     height: 50,
     marginRight: 10,
   },
 
   errorText: {
-    fontSize: 14,
+    fontSize: width < 400 ? 13 : 14,
     fontWeight: 'bold',
     color: '#333',
   },
+
   errorSubText: {
-    fontSize: 11,
+    fontSize: width < 400 ? 10 : 11,
     color: '#777',
     marginTop: 4,
     lineHeight: 18,
     flexWrap: 'wrap',
-    width: '30%'
+    width: '30%',
   },
-  email:{
+
+  email: {
     color: '#0E41E5',
     textDecorationLine: 'underline',
   },
 
   faqContainer: {
     marginTop: 20,
-    paddingHorizontal: 15,
-  },
-
-  faqContainer: {
-    marginTop: 20,
-    paddingHorizontal: 15,
+    marginHorizontal: width < 400 ? 15 : 15,
     marginBottom: 60,
   },
-  
+
   faqItem: {
-    flexDirection: 'row', // Ícones e texto lado a lado
-    justifyContent: 'space-between', // Espaço entre o texto e o ícone
-    alignItems: 'center', // Alinhamento vertical
-    borderBottomWidth: 1, // Linha inferior para separar itens
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
     borderBottomColor: '#ccc', 
-    paddingVertical: 15, // Espaçamento interno vertical
+    paddingVertical: width < 400 ? 10 : 15, // Menos padding em telas menores
   },
-  
+
   faqQuestion: {
-    fontSize: 16, // Tamanho do texto da pergunta
-    fontWeight: 'bold', // Texto em negrito para destaque
+    fontSize: width < 400 ? 14 : 16,
+    fontWeight: 'bold',
     color: '#000',
-    flex: 1, // Ocupa o espaço restante
+    flex: 1,
   },
-  
+
   faqAnswer: {
-    fontSize: 14,
-    color: '#555', // Cor mais discreta para respostas
-    marginTop: 10, // Espaço superior para separar da pergunta
-    lineHeight: 20, // Melhor leitura
+    fontSize: width < 400 ? 12 : 14,
+    color: '#555',
+    marginTop: 10,
+    lineHeight: 20,
   },
-  
+
   iconPerguntas: {
-    fontSize: 20, // Tamanho do ícone
-    color: '#FF9900', // Cor do ícone combinando com o tema
-    marginLeft: 10, // Espaçamento entre o texto e o ícone
+    fontSize: width < 400 ? 16 : 20,
+    color: '#FF9900',
+    marginLeft: 10,
   },
 
   triangle: {
@@ -170,17 +168,17 @@ export const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: width < 400 ? 18 : 20,
     fontFamily: 'Open Sans Semi Bold',
     color: '#000',
   },
 
   line: {
-    paddingTop: 40, 
+    paddingTop: 40,
     paddingBottom: 10,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 });
