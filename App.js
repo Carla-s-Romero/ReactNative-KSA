@@ -44,6 +44,7 @@ export default function App() {
           component={TelaHorarios} 
           options={{ headerShown: false }} 
         />
+<<<<<<< HEAD
 
         <Stack.Screen 
           name="TelaContato" 
@@ -57,19 +58,37 @@ export default function App() {
           options={{ headerShown: false }} 
         />
       
+=======
+        <Stack.Screen
+          name="TelaBoletim"
+          component={TelaBoletim}
+          options={{ headerShown: false }}
+        />
+>>>>>>> baf33c2ec32e8b93b9fdd90f9f9045007ac691a9
         <Stack.Screen 
           name="TelaComunicado" 
           component={TelaComunicado} 
           options={{ headerShown: false, gestureEnabled: true }} 
         />
+<<<<<<< HEAD
 
         {/* Tela de Turmas com DrawerNavigator */}
+=======
+>>>>>>> baf33c2ec32e8b93b9fdd90f9f9045007ac691a9
         <Stack.Screen 
           name="TelaTurmas" 
           component={DrawerNavigator} 
           options={{ headerShown: false }} 
         />
+<<<<<<< HEAD
 
+=======
+        <Stack.Screen
+          name="TelaContato"
+          component={TelaContato}
+          options={{ headerShown: false }}
+        />
+>>>>>>> baf33c2ec32e8b93b9fdd90f9f9045007ac691a9
       </Stack.Navigator>
     </NavigationContainer>
   );
