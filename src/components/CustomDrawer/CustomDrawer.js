@@ -57,19 +57,13 @@ const CustomDrawer = () => {
           <Text style={styles.systemHeader}>Sistema</Text>
           </View>
           
-          <TouchableOpacity 
-            style={styles.menuItem} 
-            onPress={() => navigation.navigate('TelaConfiguracao')}
-          >
-            <Icon name="settings" size={20} color="#FF9900" style={styles.icon} />
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaConfiguracao')}>
+            <Image source={require('../../assets/IconConfig.png')}  style={styles.iconMenu} />
             <Text style={styles.menuItemText}>Configuração</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
-            style={styles.menuItem} 
-            onPress={() => navigation.navigate('TelaContato')}
-          >
-            <Icon name="support-agent" size={20} color="#FF9900" style={styles.icon} />
+          <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('TelaContato')}>
+            <Image source={require('../../assets/IconSup.png')}  style={styles.iconMenu} />
             <Text style={styles.menuItemText}>Suporte</Text>
           </TouchableOpacity>
         </View>
