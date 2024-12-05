@@ -45,7 +45,7 @@ const TelaTurmas = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.navigate('TelaComunicado', { turmaid: item._id })} style={styles.turmaCard}>
         <ImageBackground source={require('../../assets/Banner.jpg')} blurRadius={5} style={styles.turmaCardHeader}>
           <View style={styles.overlay} />
-          <Image source={require('../../assets/heimer.jpg')} style={styles.turmaFotoProf} />
+          <Image source={require('../../assets/profplaceholder.png')} style={styles.turmaFotoProf} />
           <View style={styles.turmaCardHeaderDesc}>
           </View>
         </ImageBackground>
